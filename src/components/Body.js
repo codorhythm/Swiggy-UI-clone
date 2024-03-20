@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
-  const [list, setList] = useState([]);
+  let [list, setList] = useState([]);
   const [searchText, setSearchText] = useState("");
   let [filteredList, setFilteredList] = useState([]);
   useEffect(() => {
@@ -35,17 +35,21 @@ const Body = () => {
   return list.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="body">
-      <div className="filter">
+    <div className="body p-5 bg-slate-100">
+      <div className="filter flex justify-center">
+        <div className="py-2"> 
         <input
           type="text"
-          className="search-box"
+          className="search-box border h-10"
           value={searchText}
           onChange={(e) => {
             setSearchText(e.target.value);
           }}
         />
-        <button
+        </div>
+        
+        <div className="py-2 px-2">
+        <button className="bg-slate-400 font-medium p-2 rounded text-white"
           onClick={() => {
             filteredList = list.filter((res) => {
               return res.info.name
@@ -58,18 +62,22 @@ const Body = () => {
         >
           Search
         </button>
+        </div>
+        <div className="py-2 px-2">
         <button
-          className="filter-btn"
+          className="filter-btn bg-slate-400 font-medium p-2 rounded text-white"
           onClick={() => {
-            list = list.filter((res) => res.info.avgRating > 4.4);
-            setList(list);
-            console.log(list);
+            filteredList = filteredList.filter((res) => res.info.avgRating > 4.4);
+            setFilteredList(filteredList);
+            console.log(filteredList);
           }}
         >
           Top rated Restaurants
         </button>
+        </div>
+        
       </div>
-      <div className="res-container">
+      <div className="res-container flex flex-wrap">
         {filteredList.map((restaurant) => (
             <Link key={restaurant.info.id} to={"/restaurants/" +restaurant.info.id}> <Restaurant  resData={restaurant} /></Link>
          

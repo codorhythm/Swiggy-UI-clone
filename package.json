@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/codorhythm/namaste-react#readme",
   "devDependencies": {
-    "parcel-bundler": "^1.12.5"
+    "parcel-bundler": "^1.12.5",
+    "postcss": "^8.4.37",
+    "tailwindcss": "^3.4.1"
   },
   "dependencies": {
     "parcel": "^2.12.0",
