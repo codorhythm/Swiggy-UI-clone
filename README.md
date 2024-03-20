@@ -1,5 +1,5 @@
 # Swiggy (Screenshots Of the Build)
-For the sake of learninga React and implementing it in with Live Swiggy API. I built a Swiggy-like UI 
+### For the sake of learninga React and implementing it in with Live Swiggy API. I built a Swiggy-like UI 
 ![alt text](image.png)
 ![alt text](image-1.png)
 ![alt text](image-2.png)
