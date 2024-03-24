@@ -1,17 +1,21 @@
-import Restaurant from "./Restaurant";
+import Restaurant, { withPromotedlabel } from "./Restaurant";
 import { useState, useEffect } from "react";
 import Shimmer from "./shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
-  let [list, setList] = useState([]);
+  const [list, setList] = useState([]);
   const [searchText, setSearchText] = useState("");
-  let [filteredList, setFilteredList] = useState([]);
+  const [filteredList, setFilteredList] = useState([]);
+
+  const RestaurantPromoted = withPromotedlabel(Restaurant);
+
   useEffect(() => {
     fetchData();
   }, []);
-  console.log("BodyRendered");
+  console.log("BodyRendered", list);
+  // console.log(filteredList[2].info.aggregatedDiscountInfoV3);
   const fetchData = async () => {
     const data = await fetch(
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.96340&lng=77.58550&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
@@ -41,7 +45,7 @@ const Body = () => {
         <input
           type="text"
           className="search-box border h-10"
-          value={searchText}
+          value={searchText} 
           onChange={(e) => {
             setSearchText(e.target.value);
           }}
@@ -77,9 +81,16 @@ const Body = () => {
         </div>
         
       </div>
+     
       <div className="res-container flex flex-wrap">
         {filteredList.map((restaurant) => (
-            <Link key={restaurant.info.id} to={"/restaurants/" +restaurant.info.id}> <Restaurant  resData={restaurant} /></Link>
+          
+            <Link key={restaurant.info.id} to={"/restaurants/" +restaurant.info.id}> 
+            {/* { restaurant.info.aggregatedDiscountInfoV3 ? (<RestaurantPromoted  resData={restaurant}) : (<Restaurant resData={restaurant}/>)  } */}
+            {restaurant.info.hasOwnProperty('aggregatedDiscountInfoV3')? ( <RestaurantPromoted resData={restaurant}/>) : ( <Restaurant resData={restaurant}/>) }
+           
+           
+            </Link>
          
         ))}
         {/* //array.map((x) =>  x*2); */}
