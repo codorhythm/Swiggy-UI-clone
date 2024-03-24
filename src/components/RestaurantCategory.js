@@ -7,7 +7,7 @@ const RestaurantCategory = ({data}) => {
     return (
         <div className=" w-[6/12] mx-[307] py-2">
             <div className="flex justify-between py-2">
-            <span>{data.card.card.title}  ({data.card.card.itemCards.length})</span> <span>{DOWN_ARROW}</span>
+            <span className="font-bold text-xl text-[#282c3f]">{data.card.card.title}  ({data.card.card.itemCards.length})</span> <span>{DOWN_ARROW}</span>
             </div>
             <div>
                 {/* {data.card.} */}
