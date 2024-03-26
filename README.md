@@ -31,3 +31,16 @@
 ## ACCORDION - used Lifting the state Up theory 
 ![alt text](image-19.png) 
 ![alt text](image-20.png)
+
+## Concepts of UseContext
+![alt text](image-23.png)
+![alt text](image-21.png)
+![alt text](image-22.png)
+
+Using in class-based component
+![alt text](image-24.png)
+
+wrapping up under the App. Modifying useContext
+![alt text](image-25.png)
+
+![alt text](image-26.png)

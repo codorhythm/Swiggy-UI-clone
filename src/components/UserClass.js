@@ -33,7 +33,7 @@ class UserClass extends React.Component{
     
     render(){
         const {name , avatar_url, location} = this?.state?.userinfo 
-        debugger;
+        // debugger;
         return (<div className="user">
           
             <h1><img src={avatar_url} alt="" srcset="" /></h1>

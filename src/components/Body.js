@@ -1,9 +1,9 @@
 import Restaurant, { withPromotedlabel } from "./Restaurant";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Shimmer from "./shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
-
+import UserContext from "../utils/userContext";
 const Body = () => {
   const [list, setList] = useState([]);
   const [searchText, setSearchText] = useState("");
@@ -11,10 +11,12 @@ const Body = () => {
 
   const RestaurantPromoted = withPromotedlabel(Restaurant);
 
+  const {loggedInUser,setUserName} = useContext(UserContext);
+
   useEffect(() => {
     fetchData();
   }, []);
-  console.log("BodyRendered", list);
+  // console.log("BodyRendered", list);
   // console.log(filteredList[2].info.aggregatedDiscountInfoV3);
   const fetchData = async () => {
     const data = await fetch(
@@ -78,6 +80,8 @@ const Body = () => {
         >
           Top rated Restaurants
         </button>
+        <label className="py-2 px-2">Username</label>
+        <input className="border-black py-2 px-2" value={loggedInUser} onChange={(e) => setUserName(e.target.value)} />
         </div>
         
       </div>

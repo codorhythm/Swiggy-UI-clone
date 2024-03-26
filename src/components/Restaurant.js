@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import { CDN_URL, RATING } from "../utils/constants";
+import UserContext from "../utils/userContext";
 
 const Restaurant = (props) => {
     const {resData} = props
+    const {loggedInUser} = useContext(UserContext);
     const {name, cuisines, avgRating, costForTwo, sla, locality} = resData?.info;
     return (
        
@@ -15,6 +18,7 @@ const Restaurant = (props) => {
             <h3 className=" text-slate-500 ">{cuisines.join(", ")}</h3>
             <h3 className=" text-slate-500 ">{costForTwo}</h3>
             <h3 className=" text-slate-500 ">{locality}</h3>
+            <h3>{loggedInUser}</h3>
         </div>
         
         </div>
