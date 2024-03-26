@@ -22,3 +22,12 @@
 ## Hover Effect
 
 ![alt text](image-13.png)
+![alt text](image-16.png)
+![alt text](image-17.png)
+
+## ADD buttons
+![alt text](image-18.png)
+
+## ACCORDION - used Lifting the state Up theory 
+![alt text](image-19.png) 
+![alt text](image-20.png)
