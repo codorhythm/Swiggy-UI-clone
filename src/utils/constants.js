@@ -15,3 +15,7 @@ export const UP_ARROW  = <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24
 <path d="M18 15C18 15 13.5811 9.00001 12 9C10.4188 8.99999 6 15 6 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
 </svg> 
 
+export const CART_ICON = <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 0 37 32" height="20" width="20" fill="#686b78">
+<path d="M4.438 0l-2.598 5.11-1.84 26.124h34.909l-1.906-26.124-2.597-5.11z"  stroke="#282c3f" stroke-width= "2px" fill="#fff"></path>
+</svg>
+

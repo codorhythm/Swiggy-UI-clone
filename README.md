@@ -44,3 +44,11 @@ wrapping up under the App. Modifying useContext
 ![alt text](image-25.png)
 
 ![alt text](image-26.png)
+
+## Redux toolKit to build cart
+![alt text](image-27.png)
+![alt text](image-28.png)
+
+Added Clear cart
+![alt text](image-29.png)
+![alt text](image-30.png)
