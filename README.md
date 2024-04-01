@@ -52,3 +52,6 @@ wrapping up under the App. Modifying useContext
 Added Clear cart
 ![alt text](image-29.png)
 ![alt text](image-30.png)
+
+## Done multiple unit testing and Integration testing with 97.59% coverrage
+![alt text](image-31.png)

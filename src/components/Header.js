@@ -9,30 +9,30 @@ const Header = () => {
   const [btnName, setBtnNmae] = useState("Login");
   const onlineStatus = useOnlineStatus();
   const { loggedInUser } = useContext(UserContext);
-  console.log(loggedInUser);
+  // console.log(loggedInUser);
   const cartItem = useSelector((store) => store.cart.items);
-  console.log(cartItem);
+  // console.log(cartItem);
   return (
     <div className="header flex justify-around p-4 ">
       <div className="logo">{LOGO}</div>
       <div className="nav-items">
-        <ul className="flex pt-2 text-gray-500">
+        <ul className="flex pt-2 text-[#3e4152]">
           <li className="px-2">
             Online Status : {onlineStatus ? " ✅ " : " 🔴 "}
           </li>
-          <li className="px-2">
+          <li className="px-2 font-semibold">
             <Link to={"/home"}>Home</Link>
           </li>
-          <li className="px-2">
+          <li className="px-2 font-semibold">
             <Link to={"/about"}>About Us</Link>
           </li>
-          <li className="px-2">
+          <li className="px-2 font-semibold">
             <Link to={"/contactus"}>Contact Us</Link>
           </li>
-          <li className="px-2">
+          <li className="px-2 font-semibold">
             <Link to={"/grocery"}>Grocery</Link>
           </li>
-          <li className="px-2 ">
+          <li className="px-2 font-semibold">
             <Link to={"/cart"}>
               {" "}
               <div className="flex items-center">

@@ -3,7 +3,7 @@ import { CDN_URL } from "../utils/constants";
 import { addItem } from "../utils/cartSlice";
 
 const ItemList = ({ items }) => {
-  console.log(items, " itms ");
+  // console.log(items, " itms ");
   const dispatch = useDispatch();
   const handleAddItem = (item) => {
     dispatch(addItem(item));
@@ -11,7 +11,7 @@ const ItemList = ({ items }) => {
   return (
     <div>
       {items.map((item) => (
-        <div className="flex py-2 m-2" key={item.card.info.name}>
+        <div data-testid="foodItems" className="flex py-2 m-2" key={item.card.info.name}>
           <div className="w-9/12 text-left">
             <div className="font-semibold text-[#3e4152]">
               {item.card.info.name}

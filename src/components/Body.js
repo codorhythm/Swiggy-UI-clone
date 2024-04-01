@@ -7,7 +7,7 @@ import UserContext from "../utils/userContext";
 const Body = () => {
   const [list, setList] = useState([]);
   const [searchText, setSearchText] = useState("");
-  const [filteredList, setFilteredList] = useState([]);
+  let [filteredList, setFilteredList] = useState([]);
 
   const RestaurantPromoted = withPromotedlabel(Restaurant);
 
@@ -23,7 +23,7 @@ const Body = () => {
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.96340&lng=77.58550&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
-    console.log(json);
+    // console.log(json);
     // Optional Chaining
     setList(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
@@ -44,7 +44,7 @@ const Body = () => {
     <div className="body p-5 bg-slate-100">
       <div className="filter flex justify-center">
         <div className="py-2"> 
-        <input
+        <input data-testid = "SearchInput"
           type="text"
           className="search-box border h-10"
           value={searchText} 
@@ -62,7 +62,7 @@ const Body = () => {
                 .toLowerCase()
                 .includes(searchText.toLowerCase());
             });
-            console.log(filteredList);
+            // console.log(filteredList);
             setFilteredList(filteredList);
           }}
         >
@@ -73,12 +73,12 @@ const Body = () => {
         <button
           className="filter-btn bg-slate-400 font-medium p-2 rounded text-white"
           onClick={() => {
-            filteredList = filteredList.filter((res) => res.info.avgRating > 4.4);
+            filteredList = filteredList.filter((res) => res.info.avgRating > 4);
             setFilteredList(filteredList);
-            console.log(filteredList);
+            // console.log(filteredList, "top");
           }}
         >
-          Top rated Restaurants
+          Top Rated Restaurants
         </button>
         <label className="py-2 px-2">Username</label>
         <input className="border-black py-2 px-2" value={loggedInUser} onChange={(e) => setUserName(e.target.value)} />

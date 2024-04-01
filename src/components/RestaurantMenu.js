@@ -13,9 +13,9 @@ const RestaurantMenu = () => {
   const { resId } = useParams();
   const resInfo = useRestaurantMenu(resId);
   const [showIndex, setShowIndex] = useState(null);
-  console.log(resId);
-  console.log(resInfo)
-  console.log(resInfo?.cards[2]?.card?.card?.info.name);
+  // console.log(resId);
+  // console.log(resInfo)
+  // console.log(resInfo?.cards[2]?.card?.card?.info.name);
   // const fetchMenu = async () => {
   //     const data = await fetch(MENU_URL+resId)
   //     const json = await data.json();
@@ -48,7 +48,7 @@ const RestaurantMenu = () => {
     );
   // const categories = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(c => c?.card?.card?.hasOwnProperty("title"))
 
-  console.log(categories);
+  // console.log(categories);
   return (
     <div className="text-left ">
       <div className="flex w-[725px] justify-between items-center ml-[307px]">
